@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luisa Electro Muebles - Catálogo</title>
+  
+  <!-- Bootstrap CSS CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #007bff !important;
+    }
+    .product-card {
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .product-img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .product-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .product-price {
+      color: #28a745;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    footer {
+      background-color: #007bff;
+      color: white;
+      padding: 1rem 0;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Luisa Electro Muebles</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fw-semibold">
+          <li class="nav-item"><a class="nav-link active" href="#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="py-5 text-center bg-primary text-white">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Descubre nuestros muebles eléctricos</h1>
+      <p class="lead">Calidad, innovación y estilo para tu hogar o negocio</p>
+      <a href="#catalogo" class="btn btn-light btn-lg mt-3">Ver Catálogo</a>
+    </div>
+  </section>
+
+  <!-- Catálogo -->
+  <section id="catalogo" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center fw-bold">Catálogo Destacado</h2>
+      <div class="row g-4">
+
+        <!-- Producto 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1581291519195-ef11498d1cf0?auto=format&fit=crop&w=400&q=80" 
+                 alt="Silla Eléctrica" class="product-img" />
+            <div class="p-3">
+              <h3 class="product-title">Silla Eléctrica Comfort</h3>
+              <p class="product-price">$1,250.00 MXN</p>
+              <p>Ergonómica y con control remoto, perfecta para relajarte en casa.</p>
+              <a href="#" class="btn btn-primary btn-sm mt-2">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=400&q=80" 
+                 alt="Mesa Multifuncional" class="product-img" />
+            <div class="p-3">
+              <h3 class="product-title">Mesa Multifuncional Pro</h3>
+              <p class="product-price">$2,400.00 MXN</p>
+              <p>Con ajuste eléctrico de altura y superficie resistente a rayones.</p>
+              <a href="#" class="btn btn-primary btn-sm mt-2">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=400&q=80" 
+                 alt="Lámpara LED" class="product-img" />
+            <div class="p-3">
+              <h3 class="product-title">Lámpara LED Inteligente</h3>
+              <p class="product-price">$850.00 MXN</p>
+              <p>Controla el ambiente con colores y brillo ajustable desde tu móvil.</p>
+              <a href="#" class="btn btn-primary btn-sm mt-2">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80" 
+                 alt="Estante Modular" class="product-img" />
+            <div class="p-3">
+              <h3 class="product-title">Estante Modular Deluxe</h3>
+              <p class="product-price">$3,150.00 MXN</p>
+              <p>Diseño moderno y adaptable a cualquier espacio.</p>
+              <a href="#" class="btn btn-primary btn-sm mt-2">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="mb-4 text-center fw-bold">Sobre Luisa Electro Muebles</h2>
+      <p class="lead text-center mx-auto" style="max-width: 700px;">
+        Somos líderes en muebles eléctricos con más de 10 años de experiencia ofreciendo productos innovadores y de alta calidad.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4 text-center fw-bold">Contáctanos</h2>
+      <form class="mx-auto" style="max-width: 500px;">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required />
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="correo" placeholder="nombre@correo.com" required />
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Luisa Electro Muebles. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS CDN (Popper + Bootstrap JS) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>
+
+
