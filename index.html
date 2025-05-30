@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luisa Electro Muebles - Catálogo Interactivo</title>
+  <title>Luisa Electro Muebles - Catálogo por Categorías</title>
   
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -59,33 +59,27 @@
     .search-input {
       max-width: 400px;
     }
+    .categoria-seccion {
+      margin-bottom: 3rem;
+    }
+    .categoria-titulo {
+      margin-bottom: 1rem;
+      font-weight: 700;
+      border-bottom: 3px solid #0d6efd;
+      display: inline-block;
+      padding-bottom: 4px;
+      font-size: 1.5rem;
+      color: #0d6efd;
+    }
   </style>
 </head>
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Luisa Electro Muebles</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto fw-semibold">
-        <li class="nav-item"><a class="nav-link active" href="#catalogo">Catálogo</a></li>
-        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
 <!-- Hero -->
 <section class="py-5 text-center bg-primary text-white">
   <div class="container">
     <h1 class="display-4 fw-bold">Catálogo Interactivo</h1>
-    <p class="lead">Filtra por categoría, marca y rango de precio</p>
+    <p class="lead">Filtra por categoría y rango de precio</p>
   </div>
 </section>
 
@@ -94,7 +88,7 @@
   <div class="filter-section">
     <div class="row g-3 align-items-center">
       <!-- Categorías -->
-      <div class="col-12 col-md-5">
+      <div class="col-12 col-md-7">
         <label class="form-label fw-bold mb-2">Categorías:</label><br />
         <span class="badge bg-secondary category-badge active" data-category="all">Todas</span>
         <span class="badge bg-secondary category-badge" data-category="estufas">Estufas</span>
@@ -104,21 +98,8 @@
         <span class="badge bg-secondary category-badge" data-category="cuadros">Cuadros Decorativos</span>
       </div>
 
-      <!-- Marcas -->
-      <div class="col-12 col-md-4">
-        <label for="marcaSelect" class="form-label fw-bold">Marca:</label>
-        <select id="marcaSelect" class="form-select">
-          <option value="all">Todas</option>
-          <option value="LG">LG</option>
-          <option value="Samsung">Samsung</option>
-          <option value="Whirlpool">Whirlpool</option>
-          <option value="Ikea">Ikea</option>
-          <option value="Other">Otra</option>
-        </select>
-      </div>
-
       <!-- Rango Precio -->
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-5">
         <label for="precioRange" class="form-label fw-bold d-block">Precio máximo: <span id="precioValor">$5000</span></label>
         <input type="range" class="form-range" min="0" max="5000" step="50" value="5000" id="precioRange" />
       </div>
@@ -136,32 +117,20 @@
     />
   </div>
 
-  <!-- Catálogo de productos -->
-  <div id="catalogo" class="row g-4"></div>
-</section>
-
-<!-- Nosotros -->
-<section id="nosotros" class="py-5 bg-white">
-  <div class="container">
-    <h2 class="mb-4 text-center fw-bold">Sobre Luisa Electro Muebles</h2>
-    <p class="lead text-center mx-auto" style="max-width: 700px;">
-      Somos líderes en muebles eléctricos con más de 10 años de experiencia ofreciendo productos innovadores y de alta calidad.
-    </p>
-  </div>
+  <!-- Catálogo agrupado por categoría -->
+  <div id="catalogo-por-categoria" class="container"></div>
 </section>
 
 <!-- Contacto -->
 <section id="contacto" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="mb-4 text-center fw-bold">Contáctanos por WhatsApp</h2>
-    <p class="text-center mb-4">¿Quieres información? Envíanos un mensaje directo por WhatsApp.</p>
-    <div class="text-center">
-      <a href="https://wa.me/5211234567890" target="_blank" class="btn btn-success btn-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-whatsapp" viewBox="0 0 16 16">
-          <path d="M13.601 2.326a7.49 7.49 0 0 0-10.592 10.592l-.93 3.44 3.532-.927a7.5 7.5 0 0 0 8.678-12.591zm-6.523 9.625c-.325 0-.646-.058-.935-.166l-1.688.443.45-1.646a4.09 4.09 0 0 1-.971-2.583c0-2.276 1.85-4.127 4.127-4.127 1.102 0 2.13.429 2.9 1.199.77.77 1.2 1.8 1.2 2.9a4.13 4.13 0 0 1-4.131 4.131z"/>
-        </svg> WhatsApp
-      </a>
-    </div>
+  <div class="container text-center">
+    <h2 class="mb-4 fw-bold">Contáctanos por WhatsApp</h2>
+    <p class="mb-4">¿Quieres información? Envíanos un mensaje directo por WhatsApp.</p>
+    <a href="https://wa.me/5211234567890" target="_blank" class="btn btn-success btn-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-whatsapp" viewBox="0 0 16 16">
+        <path d="M13.601 2.326a7.49 7.49 0 0 0-10.592 10.592l-.93 3.44 3.532-.927a7.5 7.5 0 0 0 8.678-12.591zm-6.523 9.625c-.325 0-.646-.058-.935-.166l-1.688.443.45-1.646a4.09 4.09 0 0 1-.971-2.583c0-2.276 1.85-4.127 4.127-4.127 1.102 0 2.13.429 2.9 1.199.77.77 1.2 1.8 1.2 2.9a4.13 4.13 0 0 1-4.131 4.131z"/>
+      </svg> WhatsApp
+    </a>
   </div>
 </section>
 
@@ -176,149 +145,92 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  // Productos de ejemplo
   const productos = [
-    {
-      id: 1,
-      nombre: "Estufa Eléctrica Premium",
-      categoria: "estufas",
-      marca: "LG",
-      precio: 3200,
-      img: "https://images.unsplash.com/photo-1560184897-c29acde2a0c8?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 2,
-      nombre: "Nevera Inoxidable",
-      categoria: "neveras",
-      marca: "Samsung",
-      precio: 4800,
-      img: "https://images.unsplash.com/photo-1590080877777-596f280ff18d?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 3,
-      nombre: "Lavadora Automática",
-      categoria: "lavadoras",
-      marca: "Whirlpool",
-      precio: 3500,
-      img: "https://images.unsplash.com/photo-1578894385020-53a827b6c3de?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 4,
-      nombre: "Sofá Moderno",
-      categoria: "muebles",
-      marca: "Ikea",
-      precio: 4200,
-      img: "https://images.unsplash.com/photo-1582582494706-5a3540a6b87d?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 5,
-      nombre: "Cuadro Abstracto",
-      categoria: "cuadros",
-      marca: "Other",
-      precio: 900,
-      img: "https://images.unsplash.com/photo-1549899616-ef1a4f8f02b7?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 6,
-      nombre: "Estufa Gas Natural",
-      categoria: "estufas",
-      marca: "Whirlpool",
-      precio: 2800,
-      img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 7,
-      nombre: "Nevera Doble Puerta",
-      categoria: "neveras",
-      marca: "LG",
-      precio: 4600,
-      img: "https://images.unsplash.com/photo-1606813909076-1af9d16b16f0?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 8,
-      nombre: "Lavadora Semi Automática",
-      categoria: "lavadoras",
-      marca: "Samsung",
-      precio: 3000,
-      img: "https://images.unsplash.com/photo-1581578013435-62a6b2ca4917?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 9,
-      nombre: "Mesa de Centro",
-      categoria: "muebles",
-      marca: "Ikea",
-      precio: 2500,
-      img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 10,
-      nombre: "Cuadro Paisaje",
-      categoria: "cuadros",
-      marca: "Other",
-      precio: 1100,
-      img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-    }
+    {id:1,nombre:"Estufa Eléctrica Premium",categoria:"estufas",marca:"LG",precio:3200,img:"https://images.unsplash.com/photo-1560184897-c29acde2a0c8?auto=format&fit=crop&w=400&q=80"},
+    {id:2,nombre:"Nevera Inoxidable",categoria:"neveras",marca:"Samsung",precio:4800,img:"https://images.unsplash.com/photo-1590080877777-596f280ff18d?auto=format&fit=crop&w=400&q=80"},
+    {id:3,nombre:"Lavadora Automática",categoria:"lavadoras",marca:"Whirlpool",precio:3500,img:"https://images.unsplash.com/photo-1578894385020-53a827b6c3de?auto=format&fit=crop&w=400&q=80"},
+    {id:4,nombre:"Sofá Moderno",categoria:"muebles",marca:"Ikea",precio:4200,img:"https://images.unsplash.com/photo-1582582494706-5a3540a6b87d?auto=format&fit=crop&w=400&q=80"},
+    {id:5,nombre:"Cuadro Abstracto",categoria:"cuadros",marca:"Other",precio:900,img:"https://images.unsplash.com/photo-1549899616-ef1a4f8f02b7?auto=format&fit=crop&w=400&q=80"},
+    {id:6,nombre:"Estufa Gas Natural",categoria:"estufas",marca:"Whirlpool",precio:2800,img:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"},
+    {id:7,nombre:"Nevera Doble Puerta",categoria:"neveras",marca:"LG",precio:4600,img:"https://images.unsplash.com/photo-1606813909076-1af9d16b16f0?auto=format&fit=crop&w=400&q=80"},
+    {id:8,nombre:"Lavadora Semi Automática",categoria:"lavadoras",marca:"Samsung",precio:3000,img:"https://images.unsplash.com/photo-1581578013435-62a6b2ca4917?auto=format&fit=crop&w=400&q=80"},
+    {id:9,nombre:"Mesa de Centro",categoria:"muebles",marca:"Ikea",precio:2500,img:"https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=400&q=80"},
+    {id:10,nombre:"Cuadro Paisaje",categoria:"cuadros",marca:"Other",precio:1100,img:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"}
   ];
 
-  // Variables de filtro
+  const categorias = ["estufas", "neveras", "lavadoras", "muebles", "cuadros"];
+
   let categoriaSeleccionada = "all";
-  let marcaSeleccionada = "all";
   let precioMaximo = 5000;
   let textoBusqueda = "";
 
-  // Referencias DOM
-  const catalogoDiv = document.getElementById("catalogo");
   const categoriasBadges = document.querySelectorAll(".category-badge");
-  const marcaSelect = document.getElementById("marcaSelect");
   const precioRange = document.getElementById("precioRange");
   const precioValor = document.getElementById("precioValor");
   const buscadorInput = document.getElementById("buscadorInput");
+  const catalogoContenedor = document.getElementById("catalogo-por-categoria");
 
-  // Mostrar productos filtrados
   function mostrarProductos() {
-    // Filtrar productos
-    const filtrados = productos.filter(p => {
+    catalogoContenedor.innerHTML = "";
+
+    // Filtro principal (categoria, precio, búsqueda)
+    let filtrados = productos.filter(p => {
       const cumpleCategoria = categoriaSeleccionada === "all" || p.categoria === categoriaSeleccionada;
-      const cumpleMarca = marcaSeleccionada === "all" || p.marca === marcaSeleccionada;
       const cumplePrecio = p.precio <= precioMaximo;
       const cumpleBusqueda = p.nombre.toLowerCase().includes(textoBusqueda.toLowerCase());
-      return cumpleCategoria && cumpleMarca && cumplePrecio && cumpleBusqueda;
+      return cumpleCategoria && cumplePrecio && cumpleBusqueda;
     });
 
-    // Limpiar catálogo
-    catalogoDiv.innerHTML = "";
-
     if (filtrados.length === 0) {
-      catalogoDiv.innerHTML = `<p class="text-center fs-5 text-muted">No hay productos que coincidan con la búsqueda.</p>`;
+      catalogoContenedor.innerHTML = `<p class="text-center fs-5 text-muted">No hay productos que coincidan con la búsqueda.</p>`;
       return;
     }
 
-    // Crear tarjetas de productos
-    filtrados.forEach(prod => {
-      const productoHTML = `
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    // Mostrar productos agrupados por categoría
+    // Primero agrupamos los productos en un objeto
+    const agrupados = {};
+    categorias.forEach(cat => agrupados[cat] = []);
+    // Si está "all", agregamos a todas las categorías
+    if(categoriaSeleccionada === "all") {
+      filtrados.forEach(p => agrupados[p.categoria].push(p));
+    } else {
+      agrupados[categoriaSeleccionada] = filtrados;
+    }
+
+    // Renderizar cada categoría
+    for (const cat of categorias) {
+      const productosCat = agrupados[cat];
+      if (productosCat.length === 0) continue; // Si no hay productos, no mostrar categoría
+
+      const tituloCat = cat.charAt(0).toUpperCase() + cat.slice(1);
+      const seccionHTML = document.createElement("section");
+      seccionHTML.classList.add("categoria-seccion");
+
+      seccionHTML.innerHTML = `<h3 class="categoria-titulo">${tituloCat}</h3><div class="row g-4"></div>`;
+      const rowDiv = seccionHTML.querySelector("div.row");
+
+      productosCat.forEach(prod => {
+        const card = document.createElement("div");
+        card.className = "col-12 col-sm-6 col-md-4 col-lg-3";
+        card.innerHTML = `
           <div class="product-card p-3 d-flex flex-column h-100">
             <img src="${prod.img}" alt="${prod.nombre}" class="product-img mb-3 rounded" />
             <h5 class="fw-semibold">${prod.nombre}</h5>
             <p class="text-primary fw-bold">$${prod.precio.toLocaleString()}</p>
-            <p class="text-muted mb-3 small"><strong>Marca:</strong> ${prod.marca} <br> <strong>Categoría:</strong> ${prod.categoria.charAt(0).toUpperCase() + prod.categoria.slice(1)}</p>
-            <button
-              class="btn btn-wsp mt-auto"
-              onclick="contactarWhatsApp('${encodeURIComponent(prod.nombre)}')"
-            >
+            <button class="btn btn-wsp mt-auto" onclick="contactarWhatsApp('${encodeURIComponent(prod.nombre)}')">
               Me interesa
             </button>
           </div>
-        </div>
-      `;
-      catalogoDiv.insertAdjacentHTML("beforeend", productoHTML);
-    });
+        `;
+        rowDiv.appendChild(card);
+      });
+
+      catalogoContenedor.appendChild(seccionHTML);
+    }
   }
 
-  // Función para abrir WhatsApp con mensaje
   function contactarWhatsApp(productoNombre) {
-    // Cambia el número al tuyo con código internacional sin +
-    const numero = "5211234567890";
+    const numero = "5211234567890"; // Cambia a tu número con código país sin "+"
     const mensaje = `Hola, estoy interesado/a en el producto: ${productoNombre}. ¿Podrían darme más información, por favor?`;
     const url = `https://wa.me/${numero}?text=${mensaje}`;
     window.open(url, "_blank");
@@ -334,11 +246,6 @@
     });
   });
 
-  marcaSelect.addEventListener("change", e => {
-    marcaSeleccionada = e.target.value;
-    mostrarProductos();
-  });
-
   precioRange.addEventListener("input", e => {
     precioMaximo = Number(e.target.value);
     precioValor.textContent = `$${precioMaximo}`;
@@ -350,7 +257,6 @@
     mostrarProductos();
   });
 
-  // Inicializar catálogo
   mostrarProductos();
 </script>
 </body>
